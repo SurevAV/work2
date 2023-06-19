@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/page1.css">
+    <link rel="stylesheet" href="/static/css/page2.css">
+</head>
+
+<body>
+    <div class="container-main">
+
+        <div class="center">
+            <a class="text">Выберете период</a>
+        </div>
+
+
+
+        <form class="date-select" method="GET">
+
+            <a class="text">От</a>
+            <input type="date"  class="container-date" name="from" value="2023-05-04">
+            <a class="text">До</a>
+            <input type="date" class="container-date" name="to" value="2025-10-01">
+            <p class="tab2" ></p>
+            <input type="submit" name="select" class="panel-button-2" value="Выбрать">
+            <input type="submit" name="csv" class="panel-button-2" value="CSV">
+            <a class="text-2">Найдено: {{count_users}}</a>
+
+        </form>
+
+
+
+        <div class="center">
+            <a class="text">Рассылка сообщений пользователям</a>
+        </div>
+
+        <form class="date-select" method="POST">
+
+            <input  name="panel_input" class = "panel-input-2" maxlength="100" placeholder = "Id пользователя">
+            <p class="tab" ></p>
+
+            <textarea name="text_input" class="row-editor" placeholder = "{{status_telegram_response}}"></textarea>
+            <p class="tab2" ></p>
+            <input type="submit" name="click" class="panel-button" value="Отправить">
+        </form>
+
+    </div>
+</body>
+
+</html>
