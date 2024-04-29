@@ -17,8 +17,8 @@ async def handler_2(
     await state.finish()
     try:
 
-        await send_to_user("5704787049", f'Пользователь с номером {message.text}, ид {message.chat.id}, юзернеймом {message.from_user.username} оплатил курс индивидульного обучения')
-        await send_to_user("6145871916", f'Пользователь с номером {message.text}, ид  {message.chat.id}, юзернеймом {message.from_user.username} оплатил курс индивидульного обучения')
+        await send_to_user("", f'Пользователь с номером {message.text}, ид {message.chat.id}, юзернеймом {message.from_user.username} оплатил курс индивидульного обучения')
+        await send_to_user("", f'Пользователь с номером {message.text}, ид  {message.chat.id}, юзернеймом {message.from_user.username} оплатил курс индивидульного обучения')
     except:
         pass
     await message.answer('''Если у Вас остались вопросы,
