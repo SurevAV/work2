@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 
 
-bot_token = "6039886909:AAE0OP7R_6XG2xZv2uTf3WO4bZjUG1wJgvo"
+bot_token = "6129816548:AAF_jPff1ZuE4JLblOH9dP6pdDvDWDgGuBQ"
 
 
 db_name = 'test'
@@ -12,7 +12,7 @@ db_pwd = 'user'
 db_host = 'localhost'
 db_port = 5432
 
-
+#main_db main_user it1234
 @dataclass
 class Config:
     DB_NAME = db_name
@@ -22,4 +22,4 @@ class Config:
     DB_PORT = db_port
     BOT_TOKEN = bot_token
 
-    PAYMENTS_PROVIDER_TOKEN = '401643678:TEST:a6146ff1-02c9-40a0-aac7-f33bec7c7bbf'
+    PAYMENTS_PROVIDER_TOKEN = '381764678:TEST:59723'#'390540012:LIVE:36680'#

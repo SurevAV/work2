@@ -1,7 +1,5 @@
-from sqlalchemy import Column, BigInteger, Integer, Boolean, ForeignKey, String, DateTime
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, BigInteger, String
 from db.base import Base
-from datetime import datetime
 
 class Password(Base):
     __tablename__ = 'password'

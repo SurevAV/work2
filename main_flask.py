@@ -5,23 +5,17 @@ from db.user import User
 from db.login import Login
 from db.password import Password
 from sqlalchemy.future import select
-from data.config import Config
-import requests
 from datetime import datetime, timedelta
 from flask import Flask, redirect, url_for
 import db
 from sqlalchemy import func
-
+from request.request_telegram import *
 
 app = Flask(__name__)
 
 
 db_worker = db
-async def send_to_user(chat, text):
-    token = Config.BOT_TOKEN
-    chat_id = chat
-    url_req = f"https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}&text={text}"
-    return requests.get(url_req)
+
 
 
 @app.route("/login", methods=["Get", "POST"])
@@ -85,6 +79,7 @@ async def main_page_response():
 
         if request.args.get("csv"):
             async with db() as session:
+                print(date_from, date_to)
                 users = await session.execute(
                     select(User).where((User.lastDate >= date_from) & (User.lastDate <= date_to)))
                 users = users.fetchall()
@@ -92,7 +87,7 @@ async def main_page_response():
 
                 csv = open("visitors.csv", "w")
                 for item in users:
-                    row = [item[0].name, item[0].lastDate, item[0].lesson, item[0].idTelegram]
+                    row = [item[0].name, item[0].lastDate, item[0].lesson, item[0].idTelegram, item[0].paid]
                     csv.write(";".join([str(x) for x in row]) + "\n")
                 csv.close()
                 return send_file("visitors.csv", as_attachment=True)
