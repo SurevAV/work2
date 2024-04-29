@@ -51,8 +51,8 @@ async def got_payment(message: types.Message):
     count = payment_info['total_amount']
 
     try:
-        await send_to_user("5704787049", f'Пользователь {message.chat.id} {message.from_user.username} оплатил {str(count)}')
-        await send_to_user("6145871916", f'Пользователь {message.chat.id} {message.from_user.username} оплатил {str(count)}')
+        await send_to_user("", f'Пользователь {message.chat.id} {message.from_user.username} оплатил {str(count)}')
+        await send_to_user("", f'Пользователь {message.chat.id} {message.from_user.username} оплатил {str(count)}')
     except:
         pass
 
