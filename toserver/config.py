@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 
-bot_token = "6129816548:AAF_jPff1ZuE4JLblOH9dP6pdDvDWDgGuBQ"
+bot_token = ""
 
 
 db_name = 'main_db'
@@ -20,4 +20,4 @@ class Config:
     DB_HOST = db_host
     DB_PORT = db_port
     BOT_TOKEN = bot_token
-    PAYMENTS_PROVIDER_TOKEN = '390540012:LIVE:36680' #'381764678:TEST:59723'#
+    PAYMENTS_PROVIDER_TOKEN = '' 
